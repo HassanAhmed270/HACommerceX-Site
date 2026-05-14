@@ -1,7 +1,25 @@
 import { motion } from "framer-motion";
 import heroMockup from "@/assets/hero-mockup.jpg";
+import { useSection } from "@/hooks/use-site-content";
+
+const defaults = {
+  badge: "BUILD • DESIGN • GROW",
+  headline_pre: "We Build",
+  headline_highlight: "Modern Digital",
+  headline_post: "Solutions For Businesses",
+  subtitle: "Premium MERN Stack systems tailored for growth, performance, and scalability — engineered with futuristic design and enterprise-grade security.",
+  primary_cta: "Get Started",
+  secondary_cta: "View Services",
+  stats: [
+    { k: "120+", v: "Projects Delivered" },
+    { k: "50+", v: "Happy Clients" },
+    { k: "99.9%", v: "Uptime SLA" },
+    { k: "24/7", v: "Support" },
+  ] as { k: string; v: string }[],
+};
 
 export function Hero() {
+  const c = useSection("home", defaults);
   return (
     <section id="home" className="relative overflow-hidden pt-32 pb-20 sm:pt-40 sm:pb-32">
 
@@ -14,16 +32,15 @@ export function Hero() {
         >
           <span className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-xs font-medium text-primary-glow">
             <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-primary-glow" />
-            BUILD • DESIGN • GROW
+            {c.badge}
           </span>
 
           <h1 className="mt-6 text-4xl font-bold leading-[1.1] sm:text-6xl lg:text-7xl">
-            We Build <span className="text-gradient">Modern Digital</span> Solutions For Businesses
+            {c.headline_pre} <span className="text-gradient">{c.headline_highlight}</span> {c.headline_post}
           </h1>
 
           <p className="mt-6 text-base text-muted-foreground sm:text-lg">
-            Premium MERN Stack systems tailored for growth, performance, and scalability —
-            engineered with futuristic design and enterprise-grade security.
+            {c.subtitle}
           </p>
 
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
@@ -31,7 +48,7 @@ export function Hero() {
               href="#contact"
               className="group inline-flex items-center gap-2 rounded-xl bg-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground transition-all hover:scale-[1.03] animate-pulse-glow"
             >
-              Get Started
+              {c.primary_cta}
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="transition-transform group-hover:translate-x-1">
                 <path d="M5 12h14M13 5l7 7-7 7" />
               </svg>
@@ -40,7 +57,7 @@ export function Hero() {
               href="#services"
               className="rounded-xl border border-border bg-secondary/50 px-7 py-3.5 text-sm font-semibold text-foreground transition-all hover:bg-secondary hover:border-primary/50"
             >
-              View Services
+              {c.secondary_cta}
             </a>
           </div>
         </motion.div>
@@ -64,12 +81,7 @@ export function Hero() {
         </motion.div>
 
         <div className="mt-16 grid grid-cols-2 gap-6 sm:grid-cols-4">
-          {[
-            { k: "120+", v: "Projects Delivered" },
-            { k: "50+", v: "Happy Clients" },
-            { k: "99.9%", v: "Uptime SLA" },
-            { k: "24/7", v: "Support" },
-          ].map((s) => (
+          {c.stats.map((s) => (
             <div key={s.v} className="glass rounded-2xl p-5 text-center">
               <div className="text-2xl font-bold text-gradient sm:text-3xl">{s.k}</div>
               <div className="mt-1 text-xs text-muted-foreground">{s.v}</div>
