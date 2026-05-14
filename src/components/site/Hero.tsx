@@ -3,9 +3,7 @@ import heroMockup from "@/assets/hero-mockup.jpg";
 
 export function Hero() {
   return (
-    <section id="home" className="relative overflow-hidden bg-hero pt-32 pb-20 sm:pt-40 sm:pb-32">
-      <div className="absolute inset-0 bg-grid opacity-40" />
-      <div className="pointer-events-none absolute -top-40 left-1/2 h-[500px] w-[800px] -translate-x-1/2 rounded-full bg-primary/30 blur-[120px]" />
+    <section id="home" className="relative overflow-hidden pt-32 pb-20 sm:pt-40 sm:pb-32">
 
       <div className="relative mx-auto max-w-7xl px-4">
         <motion.div
