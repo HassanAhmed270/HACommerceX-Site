@@ -1,8 +1,21 @@
 import { useState } from "react";
 import { Mail, MessageCircle, Facebook, Send, Instagram, Linkedin } from "lucide-react";
 import { motion } from "framer-motion";
+import { useSection } from "@/hooks/use-site-content";
+
+const defaults = {
+  eyebrow: "Get In Touch",
+  title: "Let's build something great together.",
+  subtitle: "Tell us about your project. We'll get back within 24 hours.",
+  email: "hamommercex@gmail.com",
+  phone: "",
+  address: "",
+  whatsapp: "",
+  facebook: "",
+};
 
 export function Contact() {
+  const c = useSection("contact", defaults);
   const [sent, setSent] = useState(false);
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -15,13 +28,11 @@ export function Contact() {
       <div className="pointer-events-none absolute left-1/2 top-0 h-96 w-[800px] -translate-x-1/2 rounded-full bg-primary/20 blur-[140px]" />
       <div className="relative mx-auto max-w-7xl px-4">
         <div className="mx-auto max-w-2xl text-center">
-          <span className="text-xs font-semibold uppercase tracking-widest text-primary-glow">Get in Touch</span>
+          <span className="text-xs font-semibold uppercase tracking-widest text-primary-glow">{c.eyebrow}</span>
           <h2 className="mt-3 text-3xl font-bold sm:text-5xl">
-            Let&apos;s build <span className="text-gradient">something great</span>.
+            {c.title}
           </h2>
-          <p className="mt-4 text-muted-foreground">
-            Tell us about your project. We respond within 24 hours.
-          </p>
+          <p className="mt-4 text-muted-foreground">{c.subtitle}</p>
         </div>
 
         <div className="mt-16 grid gap-8 lg:grid-cols-5">
@@ -55,25 +66,18 @@ export function Contact() {
           </motion.form>
 
           <div className="flex flex-col gap-4 lg:col-span-2">
-            <ContactCard
-              icon={Mail}
-              label="Email us"
-              value="hello@hacommercex.com"
-              href="mailto:hello@hacommercex.com"
-            />
-            <ContactCard
-              icon={MessageCircle}
-              label="WhatsApp"
-              value="Chat with us instantly"
-              href="https://wa.me/10000000000"
-              accent
-            />
-            <ContactCard
-              icon={Facebook}
-              label="Facebook"
-              value="@HACommerceX"
-              href="https://facebook.com"
-            />
+            {c.email && (
+              <ContactCard icon={Mail} label="Email us" value={c.email} href={`mailto:${c.email}`} />
+            )}
+            {c.whatsapp && (
+              <ContactCard icon={MessageCircle} label="WhatsApp" value="Chat with us instantly" href={c.whatsapp} accent />
+            )}
+            {c.facebook && (
+              <ContactCard icon={Facebook} label="Facebook" value={c.facebook.replace(/^https?:\/\/(www\.)?facebook\.com\//, "@")} href={c.facebook} />
+            )}
+            {c.phone && (
+              <ContactCard icon={MessageCircle} label="Phone" value={c.phone} href={`tel:${c.phone}`} />
+            )}
             <div className="glass rounded-2xl p-5">
               <div className="text-xs font-semibold uppercase tracking-widest text-primary-glow">Follow</div>
               <div className="mt-3 flex gap-2">
