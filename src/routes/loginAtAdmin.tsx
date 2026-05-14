@@ -1,5 +1,5 @@
 import { createFileRoute, useNavigate, redirect } from "@tanstack/react-router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Lock, Mail, Sparkles } from "lucide-react";
 import logo from "@/assets/logo.png";
 import { supabase } from "@/integrations/supabase/client";
@@ -25,10 +25,19 @@ type Mode = "signin" | "setup";
 function AdminLogin() {
   const navigate = useNavigate();
   const [mode, setMode] = useState<Mode>("signin");
+  const [adminExists, setAdminExists] = useState<boolean | null>(null);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [msg, setMsg] = useState<{ type: "err" | "ok"; text: string } | null>(null);
+
+  useEffect(() => {
+    supabase.rpc("admin_exists").then(({ data }) => {
+      const exists = !!data;
+      setAdminExists(exists);
+      if (!exists) setMode("setup");
+    });
+  }, []);
 
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -81,22 +90,24 @@ function AdminLogin() {
           </p>
         </div>
 
-        <div className="mt-6 grid grid-cols-2 gap-1 rounded-xl border border-border bg-secondary/40 p-1 text-xs font-semibold">
-          <button
-            type="button"
-            onClick={() => { setMode("signin"); setMsg(null); }}
-            className={`rounded-lg py-2 transition-all ${mode === "signin" ? "bg-primary text-primary-foreground" : "text-muted-foreground"}`}
-          >
-            Sign In
-          </button>
-          <button
-            type="button"
-            onClick={() => { setMode("setup"); setMsg(null); }}
-            className={`rounded-lg py-2 transition-all ${mode === "setup" ? "bg-primary text-primary-foreground" : "text-muted-foreground"}`}
-          >
-            First-time Setup
-          </button>
-        </div>
+        {adminExists === false && (
+          <div className="mt-6 grid grid-cols-2 gap-1 rounded-xl border border-border bg-secondary/40 p-1 text-xs font-semibold">
+            <button
+              type="button"
+              onClick={() => { setMode("signin"); setMsg(null); }}
+              className={`rounded-lg py-2 transition-all ${mode === "signin" ? "bg-primary text-primary-foreground" : "text-muted-foreground"}`}
+            >
+              Sign In
+            </button>
+            <button
+              type="button"
+              onClick={() => { setMode("setup"); setMsg(null); }}
+              className={`rounded-lg py-2 transition-all ${mode === "setup" ? "bg-primary text-primary-foreground" : "text-muted-foreground"}`}
+            >
+              First-time Setup
+            </button>
+          </div>
+        )}
 
         <div className="mt-6 space-y-4">
           <div className="relative">

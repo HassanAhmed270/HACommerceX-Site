@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Shield, Code2, Rocket, Sparkles } from "lucide-react";
+import { useSection } from "@/hooks/use-site-content";
 
 const pillars = [
   { icon: Code2, title: "MERN Expertise", desc: "MongoDB, Express, React, Node — built right." },
@@ -8,7 +9,17 @@ const pillars = [
   { icon: Sparkles, title: "Premium UI/UX", desc: "Futuristic, refined, and conversion-focused." },
 ];
 
+const defaults = {
+  eyebrow: "About HACommerceX",
+  title_pre: "A modern software studio engineering",
+  title_highlight: "digital businesses",
+  title_post: ".",
+  paragraph_1: "HACommerceX Solutions designs and builds high-performance digital systems for ambitious teams. From e-commerce platforms and POS to admin dashboards and mobile apps, we deliver software that is fast, secure, and built to scale.",
+  paragraph_2: "We believe great software is invisible — it just works. Our engineering culture is rooted in clean architecture, modern UI/UX, and a relentless commitment to quality and security.",
+};
+
 export function About() {
+  const c = useSection("about", defaults);
   return (
     <section id="about" className="relative py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-4">
@@ -20,20 +31,13 @@ export function About() {
             transition={{ duration: 0.6 }}
           >
             <span className="text-xs font-semibold uppercase tracking-widest text-primary-glow">
-              About HACommerceX
+              {c.eyebrow}
             </span>
             <h2 className="mt-3 text-3xl font-bold sm:text-5xl">
-              A modern software studio engineering <span className="text-gradient">digital businesses</span>.
+              {c.title_pre} <span className="text-gradient">{c.title_highlight}</span>{c.title_post}
             </h2>
-            <p className="mt-6 text-muted-foreground">
-              HACommerceX Solutions designs and builds high-performance digital systems for ambitious teams.
-              From e-commerce platforms and POS to admin dashboards and mobile apps, we deliver software that
-              is fast, secure, and built to scale.
-            </p>
-            <p className="mt-4 text-muted-foreground">
-              We believe great software is invisible — it just works. Our engineering culture is rooted in
-              clean architecture, modern UI/UX, and a relentless commitment to quality and security.
-            </p>
+            <p className="mt-6 text-muted-foreground">{c.paragraph_1}</p>
+            <p className="mt-4 text-muted-foreground">{c.paragraph_2}</p>
           </motion.div>
 
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
