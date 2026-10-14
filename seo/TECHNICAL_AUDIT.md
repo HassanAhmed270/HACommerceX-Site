@@ -61,6 +61,20 @@ Good: portfolio images already use `loading="lazy"` with width/height; hero SVG 
 | C5 | No pricing guidance, process, timelines, or location | whole site | Medium | Discuss content plan |
 | C6 | API sets `Access-Control-Allow-Origin: *` and has no spam protection (honeypot / rate limit). Not SEO, but spam can bury real leads | api/index.js | Low–Medium | Schedule separately |
 
+## Week 1 resolution status (2026-10-14, branch `seo-phase1-week1`, awaiting deploy)
+
+| Item | Status |
+|---|---|
+| T1, T2 (robots, sitemap) | Fixed in code; served correctly by local build. Live check pending deploy |
+| T3 (shell served for those URLs) | Expected to resolve once the real files deploy (Vercel serves static files before rewrites); unverified live |
+| T5 (canonical) | Fixed in `index.html` |
+| O2 (OG title mismatch, no image/url/twitter) | Fixed |
+| O3 (mobile apps in description) | Fixed (removed) |
+| P1, P2, P3 (images, favicon) | Fixed: dist 7.5 MB to 888 KB (local build, not field data) |
+| C1 (form wipes message) | Fixed; behaviour tests pass, and fail on the original code |
+| C6 partly (server config errors shown to visitors) | Fixed in the client; CORS and spam protection still open |
+| Still open | J1-J4, T4, T6, T7, P4, P5, O1, O4-O9, C2-C5 |
+
 ## Validation status
 
 Verified from code: J1–J3, T1–T2, T5, P1–P5, O1–O9, C1–C6. Verified by live fetch: T3 (partial). Not verified: HTTP status codes, response headers, rendered output in Google, CWV, console errors, indexing.

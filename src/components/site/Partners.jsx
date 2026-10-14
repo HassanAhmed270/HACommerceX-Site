@@ -1,4 +1,4 @@
-import partnerAka from "@/assets/partner-aka.png";
+import partnerAka from "@/assets/partner-aka.webp";
 
 const partners = [
   { name: "AKA_WMart", logo: partnerAka, url: "#" },

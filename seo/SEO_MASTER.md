@@ -33,14 +33,21 @@ A one-URL site can only target one set of keywords. Services, POS, e-commerce an
 
 | Date | Decision | Status |
 |---|---|---|
-| 2026-10-14 | Keep Vite/React for now; do not assume Next.js | Proposed, awaiting approval |
-| 2026-10-14 | Phase 1 = quick wins with no architecture change | Proposed, awaiting approval |
+| 2026-10-14 | Keep Vite/React for now; do not assume Next.js | Agreed for Phase 1; architecture revisited in Phase 2 |
+| 2026-10-14 | Phase 1 = quick wins with no architecture change | Approved; Week 1 built, awaiting deploy |
+| 2026-10-14 | Official address stays `https://hacommercex.vercel.app` (no custom domain now) | Decided by owner |
+| 2026-10-14 | Location: based in Karachi, no physical address; open to in-person meetings in Karachi and remote/freelance work worldwide. No LocalBusiness schema, no map, no Google Business Profile | Decided by owner |
+| 2026-10-14 | Single public email: `hacommercex@gmail.com` | Decided by owner |
+| 2026-10-14 | Hero stats "10+ Projects", "9+ Happy Clients", "90.5% Uptime SLA", "24/7 Support" to be removed (owner has had 2 clients); replaced in Week 2 with verifiable facts | Decided; Week 2 |
+| 2026-10-14 | Contact form test by owner: no email received; likely missing Vercel SMTP variables | Owner action pending |
 
 ## 5. Open questions for the owner
 
-1. Is Karachi (or another city) a genuine base you want to rank for? Is there a real address or only a service area?
-2. Are the hero stats true: "10+ Projects", "9+ Happy Clients", "90.5% Uptime SLA", "24/7 Support"?
-3. Do you offer mobile apps (meta description says so, services list does not)?
-4. Which email is canonical: `hacommercex@gmail.com` (contact card) or `hello@hacommercex.com` (footer)? Does that domain exist?
-5. Do you have, or can you create, Google Search Console and Bing Webmaster access for `hacommercex.vercel.app`? Is a custom domain planned? (This affects every canonical URL.)
-6. Can the portfolio projects be named publicly with links, and are there client permissions or real outcomes you can share?
+Answered 2026-10-14: location, hero stats, canonical email, custom domain (none), contact-form status.
+
+Still open:
+1. Do you offer mobile apps? (Removed from the meta description for now; the services list does not include it.)
+2. Do you offer FBR POS integration for retail clients? (Potential local differentiator; capability unconfirmed.)
+3. Can you create Google Search Console and Bing Webmaster access for `hacommercex.vercel.app`?
+4. Can the portfolio projects be named publicly with links, and are there client permissions or real outcomes you can share?
+5. What are your real Facebook/LinkedIn/GitHub profile URLs for brand profiles and schema `sameAs`?

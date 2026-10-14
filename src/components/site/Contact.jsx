@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import axios from "axios";
 import { Mail, Facebook, Send } from "lucide-react";
 import { motion } from "framer-motion";
@@ -6,15 +6,7 @@ import { toast } from "sonner";
 
 export function Contact() {
   const [sending, setSending] = useState(false);
-  const [shouldResetForm, setShouldResetForm] = useState(false);
   const formRef = useRef(null);
-
-  useEffect(() => {
-    if (shouldResetForm && formRef.current) {
-      formRef.current.reset();
-      setShouldResetForm(false);
-    }
-  }, [shouldResetForm]);
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -27,7 +19,6 @@ export function Contact() {
       subject: String(formData.get("subject") ?? "").trim(),
       message: String(formData.get("message") ?? "").trim(),
     };
-    setShouldResetForm(true);
 
     try {
       const apiBaseUrl =
@@ -37,14 +28,20 @@ export function Contact() {
       await axios.post(endpoint, payload, {
         headers: { "Content-Type": "application/json" },
       });
+      // Clear the form only after the message was actually sent.
+      formRef.current?.reset();
       toast.success(
         "Your Inquiry or Message is sent to HACommerceX. We will contact you shortly!"
       );
     } catch (error) {
+      // Show the server's message only for validation errors (400). For anything
+      // else, show a friendly fallback and keep what the visitor typed.
+      const isValidationError =
+        axios.isAxiosError(error) && error.response?.status === 400;
       const message =
-        axios.isAxiosError(error) && error.response?.data?.error
+        isValidationError && error.response?.data?.error
           ? String(error.response.data.error)
-          : "Unable to send your message. Please try again later.";
+          : "We couldn't send your message right now. Your text is still in the form. Please try again, or email us at hacommercex@gmail.com.";
       toast.error(message);
     } finally {
       setSending(false);
