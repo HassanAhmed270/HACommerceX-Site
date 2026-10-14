@@ -1,0 +1,16 @@
+keyword,cluster,language,location,intent,search_volume,difficulty,volume_source,target_page,serp_observation_2026-10-14,priority_hypothesis,confidence,status
+web development company in Karachi,local transactional,en,Karachi,commercial,unavailable,unavailable,none yet (needs Search Console / Keyword Planner),/ (later: /web-development-karachi only if real local value),"Single US-only search: directories (GoodFirms, DesignRush, Elioplus) and agency listings; not a Karachi-localized SERP",high if Karachi is a real base,low,unvalidated
+website development company Pakistan,national transactional,en,Pakistan,commercial,unavailable,unavailable,none yet,/,"Not searched separately",medium,low,unvalidated
+MERN stack developer Pakistan,technical transactional,en,Pakistan,commercial,unavailable,unavailable,none yet,/ or /services/custom-web-apps,"MERN query returned freelancer marketplace listings (Upwork, Jobbers, Guru) and job boards",medium,low,unvalidated
+ecommerce website development Pakistan,service,en,Pakistan,transactional,unavailable,unavailable,none yet,/services/ecommerce-website-development,"Not searched separately; cost query shows GoDaddy and agency blog content",high,low,unvalidated
+website development cost in Pakistan,cost / commercial investigation,en,Pakistan,commercial investigation,unavailable,unavailable,none yet,future guide (only with honest pricing basis),"Results: GoDaddy resource page, agency blogs, a LinkedIn article, OLX listings",medium,medium,unvalidated
+POS software Pakistan,POS,en,Pakistan,commercial,unavailable,unavailable,none yet,/services/pos-software,"Dominated by POS/accounting SaaS products and their blogs (oscar.pk, hysabone.com, softvirtue.com) - product competitors rather than agencies",medium (hard vs SaaS; agency angle = custom POS),medium,unvalidated
+FBR POS integration,POS / compliance,en,Pakistan,informational + commercial,unavailable,unavailable,none yet,future guide or POS page section,"'fbr pos' appears in POS SERP; capability of HACommerceX to deliver it is UNKNOWN",potentially high if offered,low,blocked: owner must confirm capability
+inventory management software Pakistan,inventory,en,Pakistan,commercial,unavailable,unavailable,none yet,/services/pos-software or dashboards,"Not searched",medium,low,unvalidated
+admin dashboard development / business management system,custom software,en,Pakistan/global,commercial,unavailable,unavailable,none yet,/services/custom-dashboards,"Not searched",medium,low,unvalidated
+HACommerceX (brand),brand,en,global,navigational,unavailable,unavailable,none yet,/,"Search returned unrelated CommerceX Holdings and other 'CommerceX' companies; HACommerceX did not appear in this US-only single query. Not conclusive for Pakistan",high (brand disambiguation),medium,researched
+website banane ki cost / ecommerce website kaise banaye (Roman Urdu),roman urdu informational,roman-ur,Pakistan,informational,unavailable,unavailable,none yet,future guides,"Not researched",unknown,low,not started
+
+# Notes
+# - No volumes, difficulty scores or rankings are claimed. All volume/difficulty cells are 'unavailable' until Search Console or Keyword Planner data exists.
+# - WebSearch here is US-only and returns titles, not full SERPs; treat observations as directional.
