@@ -1,5 +1,24 @@
 # Changelog
 
+## 2026-10-15 - Phase 1, Week 2 (branch `seo-phase1-week1`, not yet deployed)
+Approved section by section with the owner. Facts only; no invented claims.
+
+| Area | Change | Files |
+|---|---|---|
+| Hero | H1 "We Build Modern E-Commerce, POS & Web Apps For Growing Businesses"; paragraph names Karachi + MERN + services; buttons "Get a Free Quote" / "View Our Work"; 4 unverifiable stats replaced with true ones (Free quote, MERN, Karachi, 24h reply) | `Hero.jsx` |
+| Services | Descriptions now visible on the page (modal removed); 5 cards incl. new "Chat-Based Agents" (add-on); POS card mentions thermal receipt printing and desktop/cloud; barcode removed; each card links to the form; H2 names the services | `Services.jsx` |
+| About | Karachi + founder (Hassan Ahmed) stated; mobile apps and "enterprise" claims removed | `About.jsx` |
+| How we work | "Why HACommerceX" (generic, duplicated claims) replaced by a 4-step process | `HowWeWork.jsx` (new), `Features.jsx` deleted |
+| Portfolio | Descriptive H2; "Client project" / "Demo project" labels; real alt text; billing card updated (thermal printing, desktop + cloud) | `Portfolio.jsx` |
+| Clients | "Partners" became "Clients"; added Items Hub logo (cleaned from a 112x32 original); dead `#` link removed | `Clients.jsx` (new), `Partners.jsx` deleted, `client-items-hub.webp` |
+| Contact | Heading "Get a free quote for your project"; Karachi line; Project type dropdown; labels tied to inputs; WhatsApp wording; Facebook permanent URL | `Contact.jsx` |
+| Nav + footer | Clients link; "Get a Free Quote"; single public email, real WhatsApp link, "Karachi, Pakistan", no street address | `Navbar.jsx`, `Footer.jsx` |
+| Structured data | Organization + WebSite JSON-LD (no street address, ratings, prices or map) | `index.html` |
+| Fixes | Duplicate section IDs removed; scroll offset under fixed header | `App.jsx`, sections |
+
+Verified (local build + headless Chromium): one H1, logical H2/H3 outline, no duplicate IDs, all in-page links resolve, all images have alt text and load, no horizontal scroll at 1440 and 390 px, JSON-LD parses (Organization, WebSite), form keeps text on a 500 and clears on success, no server config text shown to visitors. Not verified: Google Rich Results / Schema Validator (needs live URL), live headers, indexing, Core Web Vitals.
+Rollback: `git revert` the Week 2 commit.
+
 ## 2026-10-14 — Phase 1, Week 1 (branch `seo-phase1-week1`, not yet deployed)
 Approved scope: crawl files + metadata, image weight, contact form fix. Canonical host: `https://hacommercex.vercel.app`.
 

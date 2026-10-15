@@ -4,6 +4,18 @@ import { Mail, Facebook, Send } from "lucide-react";
 import { motion } from "framer-motion";
 import { toast } from "sonner";
 
+const projectTypes = [
+  "E-commerce store",
+  "POS / billing system",
+  "Admin dashboard",
+  "Business website",
+  "Chat-based agent",
+  "Other",
+];
+
+const inputClass =
+  "mt-1.5 w-full rounded-xl border border-border bg-input/50 px-4 py-3 text-sm outline-none transition-all focus:border-primary focus:ring-2 focus:ring-primary/30";
+
 export function Contact() {
   const [sending, setSending] = useState(false);
   const formRef = useRef(null);
@@ -49,7 +61,7 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="relative py-24 sm:py-32">
+    <section id="contact" className="relative scroll-mt-24 py-24 sm:py-32">
       <div className="pointer-events-none absolute left-1/2 top-0 h-96 w-[800px] -translate-x-1/2 rounded-full bg-primary/20 blur-[140px]" />
 
       <div className="relative mx-auto max-w-7xl px-4">
@@ -59,10 +71,10 @@ export function Contact() {
             Get In Touch
           </span>
           <h2 className="mt-3 text-3xl font-bold sm:text-5xl">
-            Let's build something great together.
+            Get a free quote for your project
           </h2>
           <p className="mt-4 text-muted-foreground">
-            Tell us about your project. We'll get back within 24 hours.
+            Tell us what you need and we&rsquo;ll reply within 24 hours. Based in Karachi, Pakistan, working with clients in Pakistan and worldwide.
           </p>
         </div>
 
@@ -78,25 +90,43 @@ export function Contact() {
             className="glass-strong rounded-3xl p-8 lg:col-span-3"
           >
             <div className="grid gap-4 sm:grid-cols-2">
-              <Field label="Name" name="name" placeholder="Your name" />
-              <Field label="Email" name="email" type="email" placeholder="you@company.com" />
+              <Field id="contact-name" label="Name" name="name" placeholder="Your name" autoComplete="name" />
+              <Field id="contact-email" label="Email" name="email" type="email" placeholder="you@company.com" autoComplete="email" />
             </div>
 
-            <Field
-              label="Subject"
-              name="subject"
-              placeholder="Project type"
-              className="mt-4"
-            />
+            <div className="mt-4">
+              <label htmlFor="contact-project-type" className="text-xs font-medium text-muted-foreground">
+                Project type
+              </label>
+              <select
+                id="contact-project-type"
+                required
+                name="subject"
+                defaultValue=""
+                className={inputClass}
+              >
+                <option value="" disabled>
+                  Select a project type
+                </option>
+                {projectTypes.map((t) => (
+                  <option key={t} value={t}>
+                    {t}
+                  </option>
+                ))}
+              </select>
+            </div>
 
             <div className="mt-4">
-              <label className="text-xs font-medium text-muted-foreground">Message</label>
+              <label htmlFor="contact-message" className="text-xs font-medium text-muted-foreground">
+                Message
+              </label>
               <textarea
+                id="contact-message"
                 required
                 name="message"
                 rows={5}
                 placeholder="Tell us a bit about your project…"
-                className="mt-1.5 w-full rounded-xl border border-border bg-input/50 px-4 py-3 text-sm outline-none transition-all focus:border-primary focus:ring-2 focus:ring-primary/30"
+                className={inputClass}
               />
             </div>
 
@@ -105,7 +135,7 @@ export function Contact() {
               disabled={sending}
               className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground transition-all hover:scale-[1.01] glow-primary disabled:cursor-not-allowed disabled:opacity-60"
             >
-              {sending ? "Sending..." : (<><Send size={16} /> Send Message</>)}
+              {sending ? "Sending..." : (<><Send size={16} aria-hidden="true" /> Send Message</>)}
             </button>
           </motion.form>
 
@@ -120,7 +150,7 @@ export function Contact() {
             <ContactCard
               icon={Send}
               label="WhatsApp"
-              value="Chat with us instantly"
+              value="Message us on WhatsApp"
               href="https://wa.me/923348487499"
               accent
             />
@@ -128,7 +158,7 @@ export function Contact() {
               icon={Facebook}
               label="Facebook"
               value="HACommerceX Page"
-              href="https://www.facebook.com/share/1MwW1TsWEf/"
+              href="https://www.facebook.com/profile.php?id=61589157460349"
             />
           </div>
         </div>
@@ -137,16 +167,18 @@ export function Contact() {
   );
 }
 
-function Field({ label, name, type = "text", placeholder, className = "" }) {
+function Field({ id, label, name, type = "text", placeholder, autoComplete, className = "" }) {
   return (
     <div className={className}>
-      <label className="text-xs font-medium text-muted-foreground">{label}</label>
+      <label htmlFor={id} className="text-xs font-medium text-muted-foreground">{label}</label>
       <input
+        id={id}
         required
         name={name}
         type={type}
         placeholder={placeholder}
-        className="mt-1.5 w-full rounded-xl border border-border bg-input/50 px-4 py-3 text-sm outline-none transition-all focus:border-primary focus:ring-2 focus:ring-primary/30"
+        autoComplete={autoComplete}
+        className={inputClass}
       />
     </div>
   );
@@ -169,7 +201,7 @@ function ContactCard({ icon: Icon, label, value, href, accent }) {
           accent ? "bg-white/15" : "bg-primary/15 text-primary-glow"
         }`}
       >
-        <Icon size={20} />
+        <Icon size={20} aria-hidden="true" />
       </div>
       <div>
         <div className={`text-xs ${accent ? "text-white/80" : "text-muted-foreground"}`}>

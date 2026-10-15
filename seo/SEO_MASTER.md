@@ -39,7 +39,15 @@ A one-URL site can only target one set of keywords. Services, POS, e-commerce an
 | 2026-10-14 | Location: based in Karachi, no physical address; open to in-person meetings in Karachi and remote/freelance work worldwide. No LocalBusiness schema, no map, no Google Business Profile | Decided by owner |
 | 2026-10-14 | Single public email: `hacommercex@gmail.com` | Decided by owner |
 | 2026-10-14 | Hero stats "10+ Projects", "9+ Happy Clients", "90.5% Uptime SLA", "24/7 Support" to be removed (owner has had 2 clients); replaced in Week 2 with verifiable facts | Decided; Week 2 |
-| 2026-10-14 | Contact form test by owner: no email received; likely missing Vercel SMTP variables | Owner action pending |
+| 2026-10-15 | H1 = "We Build Modern E-Commerce, POS & Web Apps For Growing Businesses" (option A). Hero paragraph = option B (Karachi-based MERN stack developers...). CTA "Get a Free Quote" (owner offers free quotes) | Decided + built |
+| 2026-10-15 | Hero stats: Free quote / MERN / Karachi / 24h reply (no project or client counts) | Decided + built |
+| 2026-10-15 | New service "Chat-Based Agents" as an add-on (answer product questions, explain policies, update or record orders where the setup allows); automation not a headline service; barcode removed from POS | Decided + built |
+| 2026-10-15 | POS/billing: thermal receipt printing; desktop and cloud versions available | Owner-confirmed fact |
+| 2026-10-15 | Portfolio status: AKA_WMart storefront, Smart Retail Billing, Clean Nest = client projects; Business Analytics Dashboard = demo | Owner-confirmed |
+| 2026-10-15 | Founder named on site: Hassan Ahmed | Owner-approved |
+| 2026-10-15 | "Partners" section becomes "Clients" (AKA_WMart, Items Hub); "Why HACommerceX" becomes "How we work" | Decided + built |
+| 2026-10-15 | Facebook URL: https://www.facebook.com/profile.php?id=61589157460349 (permanent form; could not be opened automatically, owner to confirm it is the Page) | Used in contact card + schema |
+| 2026-10-14 | Contact form test by owner: no email received | Resolved: form working after Vercel variable fix (owner confirmed) |
 
 ## 5. Open questions for the owner
 

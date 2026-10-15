@@ -7,44 +7,53 @@ import p4 from "@/assets/portfolio-4.webp";
 const projects = [
   {
     img: p1,
+    alt: "AKA_WMart online watch store homepage shown on a laptop screen",
     title: "AKA_WMart Storefront",
     category: "E-Commerce Store",
+    status: "Client project",
     tech: ["React", "Node.js", "MongoDB"],
-    desc: "Modern MERN-stack ecommerce platform with secure checkout, WhatsApp integration, user accounts, and full admin dashboard management.",
+    desc: "MERN stack e-commerce store with secure checkout, WhatsApp integration, user accounts and a full admin dashboard.",
   },
   {
     img: p2,
+    alt: "Retail billing system invoice screen on a desktop monitor beside a thermal receipt printer",
     title: "Smart Retail Billing",
     category: "Billing System",
+    status: "Client project",
     tech: ["JavaScript", "MongoDB", "Express"],
-    desc: "Online Billing solution with inventory management, sales tracking, invoice generation, and secure admin dashboard.",
+    desc: "Retail billing system with inventory management, sales tracking, invoice generation and thermal receipt printing. Available as a desktop application or a cloud-based version.",
   },
   {
     img: p3,
+    alt: "Demo admin dashboard with sales charts, an orders overview and a recent orders table",
     title: "Business Analytics Dashboard",
     category: "Admin Dashboard",
+    status: "Demo project",
     tech: ["React", "JWT", "MongoDB"],
-    desc: "Advanced dashboard system with realtime analytics, secure authentication, role-based access, and business monitoring tools.",
+    desc: "Demo dashboard showing analytics, secure authentication, role-based access and business monitoring tools.",
   },
   {
     img: p4,
+    alt: "Clean Nest cleaning services website homepage",
     title: "Clean Nest Business Website",
     category: "Business Website",
+    status: "Client project",
     tech: ["React", "Tailwind CSS", "Framer Motion"],
-    desc: "Modern React business website developed for Clean Nest with responsive frontend, service information, contact support, and premium UI design.",
+    desc: "Responsive React business website for Clean Nest with service information, contact support and a clean, modern design.",
   },
 ];
 
 export function Portfolio() {
   return (
-    <section id="portfolio" className="relative py-24 sm:py-32">
+    <section id="portfolio" className="relative scroll-mt-24 py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-4">
-        <div className="mx-auto max-w-2xl text-center">
+        <div className="mx-auto max-w-3xl text-center">
           <span className="text-xl font-semibold uppercase tracking-widest text-primary-glow">
             Selected Work
           </span>
           <h2 className="mt-3 text-3xl font-bold sm:text-5xl">
-            Recent <span className="text-gradient">projects</span>.
+            MERN stack projects:{" "}
+            <span className="text-gradient">online stores, billing systems and dashboards.</span>
           </h2>
         </div>
 
@@ -61,18 +70,23 @@ export function Portfolio() {
               <div className="aspect-[16/10] overflow-hidden">
                 <img
                   src={p.img}
-                  alt={p.title}
+                  alt={p.alt}
                   loading="lazy"
-                  width={1024}
-                  height={640}
+                  width={1200}
+                  height={750}
                   className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
               <div className="p-6">
-                <div className="flex items-center justify-between">
-                  <span className="text-xs font-semibold uppercase tracking-wider text-primary-glow">
-                    {p.category}
-                  </span>
+                <div className="flex flex-wrap items-center justify-between gap-2">
+                  <div className="flex items-center gap-2">
+                    <span className="text-xs font-semibold uppercase tracking-wider text-primary-glow">
+                      {p.category}
+                    </span>
+                    <span className="rounded-full border border-primary/40 bg-primary/10 px-2 py-0.5 text-[10px] font-medium text-primary-glow">
+                      {p.status}
+                    </span>
+                  </div>
                   <div className="flex gap-1.5">
                     {p.tech.map((t) => (
                       <span

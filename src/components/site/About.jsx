@@ -2,15 +2,15 @@ import { motion } from "framer-motion";
 import { Shield, Code2, Rocket, Sparkles } from "lucide-react";
 
 const pillars = [
-  { icon: Code2, title: "MERN Expertise", desc: "MongoDB, Express, React, Node — built right." },
-  { icon: Shield, title: "Enterprise Security", desc: "JWT, bcrypt, RBAC, and hardened APIs by default." },
-  { icon: Rocket, title: "Built to Scale", desc: "Architecture that grows with your business." },
-  { icon: Sparkles, title: "Premium UI/UX", desc: "Futuristic, refined, and conversion-focused." },
+  { icon: Code2, title: "MERN Expertise", desc: "MongoDB, Express, React and Node.js, the stack we build on." },
+  { icon: Shield, title: "Secure by Design", desc: "JWT authentication, hashed passwords and role-based access control." },
+  { icon: Rocket, title: "Built to Grow", desc: "Architecture that grows with your business." },
+  { icon: Sparkles, title: "Clean, Responsive UI", desc: "Modern interfaces that work on phones, tablets and desktops." },
 ];
 
 export function About() {
   return (
-    <section id="about" className="relative py-24 sm:py-32">
+    <section id="about" className="relative scroll-mt-24 py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-8 md:px-16">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
           <motion.div
@@ -23,14 +23,14 @@ export function About() {
               About HACommerceX
             </span>
             <h2 className="mt-3 text-3xl font-bold sm:text-5xl">
-              A modern software studio engineering{" "}
-              <span className="text-gradient">digital businesses</span>.
+              A Karachi-based MERN stack studio building software for{" "}
+              <span className="text-gradient">growing businesses</span>.
             </h2>
             <p className="mt-6 text-muted-foreground">
-              HACommerceX Solutions designs and builds high-performance digital systems for ambitious teams. From e-commerce platforms and POS to admin dashboards and mobile apps, we deliver software that is fast, secure, and built to scale.
+              HACommerceX is a software studio based in Karachi, Pakistan. We build online stores, POS and billing systems, admin dashboards and chat-based agents on the MERN stack (MongoDB, Express, React and Node.js) for businesses in Pakistan and abroad.
             </p>
             <p className="mt-4 text-muted-foreground">
-              We believe great software is invisible — it just works. Our engineering culture is rooted in clean architecture, modern UI/UX, and a relentless commitment to quality and security.
+              We build with secure sign-in, role-based access and clean, maintainable code, so your software stays dependable as your business grows. Founded by Hassan Ahmed.
             </p>
           </motion.div>
 

@@ -75,6 +75,24 @@ Good: portfolio images already use `loading="lazy"` with width/height; hero SVG 
 | C6 partly (server config errors shown to visitors) | Fixed in the client; CORS and spam protection still open |
 | Still open | J1-J4, T4, T6, T7, P4, P5, O1, O4-O9, C2-C5 |
 
+## Week 2 resolution status (2026-10-15, awaiting deploy)
+
+| Item | Status |
+|---|---|
+| J2 (service text only in click modal) | Fixed: visible text on every card, modal removed |
+| O1 (H1 without service/market) | Fixed |
+| O3 (mobile apps claim) | Fixed (removed everywhere) |
+| O4 (duplicate IDs) | Fixed: 0 duplicates in rendered DOM |
+| O5 (div cards, unlabeled modal) | Fixed: semantic article/heading/link cards; modal gone |
+| O6 (alt text = title, no labels) | Partly fixed: descriptive alt text + Client/Demo labels; no case-study pages or live links yet |
+| O7 (partner link href="#") | Fixed: section is now "Clients", no dead link |
+| O9 (no structured data) | Fixed in code (Organization, WebSite); external validation pending deploy |
+| C2, C3 (unverifiable hero claims) | Fixed: removed |
+| C4 (two emails) | Fixed: single address |
+| C5 (no location/process) | Partly fixed: Karachi, worldwide, How we work; no pricing info by choice |
+| Form labels not tied to inputs | Fixed |
+| Still open | J1 (empty initial HTML), J3 (single URL), J4, T4, T6, T7, P4, P5, O8 (privacy page), C6 (CORS wildcard, spam protection) |
+
 ## Validation status
 
 Verified from code: J1–J3, T1–T2, T5, P1–P5, O1–O9, C1–C6. Verified by live fetch: T3 (partial). Not verified: HTTP status codes, response headers, rendered output in Google, CWV, console errors, indexing.

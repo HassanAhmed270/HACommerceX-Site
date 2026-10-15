@@ -6,7 +6,7 @@ const links = [
   { label: "About", href: "#about" },
   { label: "Services", href: "#services" },
   { label: "Portfolio", href: "#portfolio" },
-  { label: "Partners", href: "#partners" },
+  { label: "Clients", href: "#clients" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -66,7 +66,7 @@ export function Navbar() {
             onClick={(e) => scrollToSection(e, "#contact")}
             className="hidden rounded-xl bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-[0_0_30px_oklch(0.62_0.24_260/0.4)] transition-all hover:scale-[1.03] hover:shadow-[0_0_50px_oklch(0.62_0.24_260/0.6)] lg:inline-flex"
           >
-            Get Started
+            Get a Free Quote
           </a>
 
           <button
@@ -100,7 +100,7 @@ export function Navbar() {
                   onClick={(e) => scrollToSection(e, "#contact")}
                   className="block rounded-lg bg-primary px-3 py-2 text-center text-sm font-semibold text-primary-foreground"
                 >
-                  Get Started
+                  Get a Free Quote
                 </a>
               </li>
             </ul>

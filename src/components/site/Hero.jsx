@@ -2,10 +2,10 @@ import { motion } from "framer-motion";
 import heroMockup from "@/assets/hero-commerce-platform.svg";
 
 const stats = [
-  { k: "10+", v: "Projects Delivered" },
-  { k: "9+", v: "Happy Clients" },
-  { k: "90.5%", v: "Uptime SLA" },
-  { k: "24/7", v: "Support" },
+  { k: "Free", v: "Quote on every project" },
+  { k: "MERN", v: "Full-stack development" },
+  { k: "Karachi", v: "Based here, clients worldwide" },
+  { k: "24h", v: "Reply to every enquiry" },
 ];
 
 export function Hero() {
@@ -41,16 +41,31 @@ export function Hero() {
           className="flex-1 text-center lg:text-left"
         >
           <h1 className="mx-auto max-w-4xl text-3xl font-black leading-[0.95] tracking-tight text-white sm:text-6xl md:text-4xl lg:mx-0 lg:text-6xl pl-16">
-            We Build
+            We Build Modern
             <br />
-            <span className="text-gradient">Modern Digital</span>
+            <span className="text-gradient">E-Commerce, POS &amp; Web Apps</span>
             <br />
-            Solutions For Businesses
+            For Growing Businesses
           </h1>
 
           <p className="mx-auto mt-8 max-w-2xl text-base leading-8 text-white/70 sm:text-lg lg:mx-0 pl-16">
-            Premium MERN Stack systems tailored for growth, performance, and scalability — engineered with futuristic design and enterprise-grade security.
+            Karachi-based MERN stack developers building secure, fast online stores, POS systems and dashboards for businesses in Pakistan and abroad.
           </p>
+
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-4 pl-16 lg:justify-start">
+            <a
+              href="#contact"
+              className="inline-flex items-center rounded-xl bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-[0_0_30px_oklch(0.62_0.24_260/0.4)] transition-all hover:scale-[1.03] hover:shadow-[0_0_50px_oklch(0.62_0.24_260/0.6)]"
+            >
+              Get a Free Quote
+            </a>
+            <a
+              href="#portfolio"
+              className="inline-flex items-center rounded-xl border border-white/20 px-6 py-3.5 text-sm font-semibold text-white transition-all hover:bg-white/10"
+            >
+              View Our Work
+            </a>
+          </div>
         </motion.div>
 
         {/* IMAGE SECTION */}
@@ -64,7 +79,7 @@ export function Hero() {
           <div className="absolute bottom-6 h-28 w-72 rounded-full bg-primary-glow/20 blur-[70px]" />
           <img
             src={heroMockup}
-            alt="HACommerceX dashboard preview"
+            alt="Illustration of an e-commerce admin dashboard built by HACommerceX"
             width={1024}
             height={1024}
             className="relative z-10 w-full max-w-[650px] object-contain drop-shadow-[0_40px_90px_oklch(0.06_0.04_265/0.85)]"
