@@ -2,23 +2,25 @@ import { useEffect, useState } from "react";
 import logo from "@/assets/logo.webp";
 
 const links = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Services", href: "#services" },
-  { label: "Portfolio", href: "#portfolio" },
-  { label: "Clients", href: "#clients" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/#home" },
+  { label: "About", href: "/#about" },
+  { label: "Services", href: "/#services" },
+  { label: "Portfolio", href: "/#portfolio" },
+  { label: "Clients", href: "/#clients" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
+  // On the homepage, scroll to the section. On any other page, let the browser
+  // follow the link to the homepage section ("/#about" etc.).
   const scrollToSection = (event, href) => {
-    if (!href.startsWith("#")) return;
+    const sectionId = href.split("#")[1];
+    if (!sectionId || window.location.pathname !== "/") return;
     event.preventDefault();
     setOpen(false);
-    const sectionId = href.slice(1);
     const target = document.getElementById(sectionId);
     if (!target) return;
     window.history.pushState(null, "", href);
@@ -40,7 +42,7 @@ export function Navbar() {
         <nav
           className={`flex items-center justify-between rounded-2xl px-4 py-3 transition-all duration-300 ${scrolled ? "glass-strong" : "glass"}`}
         >
-          <a href="#home" onClick={(e) => scrollToSection(e, "#home")} className="flex items-center gap-2">
+          <a href="/#home" onClick={(e) => scrollToSection(e, "/#home")} className="flex items-center gap-2">
             <img src={logo} alt="HACommerceX" className="h-9 w-9 rounded-lg object-cover" />
             <span className="font-display text-lg font-bold">
               HA<span className="text-primary-glow">CommerceX</span>
@@ -62,8 +64,8 @@ export function Navbar() {
           </ul>
 
           <a
-            href="#contact"
-            onClick={(e) => scrollToSection(e, "#contact")}
+            href="/#contact"
+            onClick={(e) => scrollToSection(e, "/#contact")}
             className="hidden rounded-xl bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-[0_0_30px_oklch(0.62_0.24_260/0.4)] transition-all hover:scale-[1.03] hover:shadow-[0_0_50px_oklch(0.62_0.24_260/0.6)] lg:inline-flex"
           >
             Get a Free Quote
@@ -96,8 +98,8 @@ export function Navbar() {
               ))}
               <li>
                 <a
-                  href="#contact"
-                  onClick={(e) => scrollToSection(e, "#contact")}
+                  href="/#contact"
+                  onClick={(e) => scrollToSection(e, "/#contact")}
                   className="block rounded-lg bg-primary px-3 py-2 text-center text-sm font-semibold text-primary-foreground"
                 >
                   Get a Free Quote

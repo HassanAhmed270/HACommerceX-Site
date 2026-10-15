@@ -13,6 +13,11 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  ssgOptions: {
+    entry: "src/main.jsx",
+    dirStyle: "flat",
+    beastiesOptions: false,
+  },
   server: {
     port: 5173,
     proxy: {

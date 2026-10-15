@@ -74,12 +74,13 @@ const clientDir = path.join(__dirname, "..", "dist");
 const indexHtml = path.join(clientDir, "index.html");
 
 if (fs.existsSync(indexHtml)) {
-  app.use(express.static(clientDir));
+  app.use(express.static(clientDir, { extensions: ["html"] }));
   app.use((req, res) => {
     if (req.path.startsWith("/api/")) {
       return res.status(404).json({ error: "API route not found." });
     }
-    res.sendFile(indexHtml);
+    const notFound = path.join(clientDir, "404.html");
+    res.status(404).sendFile(fs.existsSync(notFound) ? notFound : indexHtml);
   });
 }
 

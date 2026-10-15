@@ -1,18 +1,18 @@
-# Next Actions — prioritized (updated 2026-10-14)
+# Next Actions — prioritized (updated 2026-10-15)
 
 Priority Score = (Impact×0.30 + Confidence×0.25 + SEO×0.20 + Efficiency×0.15 + Strategic×0.10) × 20. A prioritization aid, not a ranking prediction.
 
 | # | Task | Score | Status |
 |---|---|---|---|
 | 1 | Set up Search Console + Bing Webmaster + analytics baseline | 93.0 | **Owner action after deploy**: verify `hacommercex.vercel.app`, submit sitemap |
-| 2 | `robots.txt`, `sitemap.xml`, canonical, OG/Twitter meta, share image | 92.0 | Built + locally verified, awaiting deploy |
-| 3 | Render service content visibly + keyword-aligned H1/intro; replace inflated hero stats | 86.0 | Built + locally verified (Week 2), awaiting deploy |
-| 4 | Compress/resize images, favicon set | 83.0 | Built + locally verified, awaiting deploy |
-| 5 | Multi-page service pages + build-time prerender | 81.0 | Awaiting architecture discussion (Phase 2) |
+| 2 | `robots.txt`, `sitemap.xml`, canonical, OG/Twitter meta, share image | 92.0 | Deployed (owner confirmed) |
+| 3 | Render service content visibly + keyword-aligned H1/intro; replace inflated hero stats | 86.0 | Deployed (owner confirmed) |
+| 4 | Compress/resize images, favicon set | 83.0 | Deployed (owner confirmed) |
+| 5 | Multi-page service pages + build-time prerender | 81.0 | **Built on a preview branch** (prerender + POS page); check on Vercel preview, then merge. Other service pages follow one at a time |
 | 6 | Contact form fix | 80.0 | Done. Live and working (owner confirmed 2026-10-14) |
-| 7 | Fix/verify trust claims; single public email (`hacommercex@gmail.com`); dead partner link | 76.0 | Built (Week 2), awaiting deploy |
-| 8 | Organization + WebSite JSON-LD (verified facts only) | 73.0 | Built (Week 2); validate with Rich Results Test / Schema Validator after deploy |
-| 9 | Duplicate IDs, accessible service cards and dialog | 67.0 | Built (Week 2), awaiting deploy |
+| 7 | Fix/verify trust claims; single public email (`hacommercex@gmail.com`); dead partner link | 76.0 | Deployed (owner confirmed) |
+| 8 | Organization + WebSite JSON-LD (verified facts only) | 73.0 | Deployed; **validator results still to be reported by owner** |
+| 9 | Duplicate IDs, accessible service cards and dialog | 67.0 | Deployed (owner confirmed) |
 | 10 | Legitimate directory listings + brand profiles | 65.0 | After proof assets exist |
 
 ## Owner actions pending (cannot be done from the repo)

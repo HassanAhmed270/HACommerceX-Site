@@ -20,11 +20,11 @@ export function Footer() {
           <div>
             <div className="text-xs font-semibold uppercase tracking-widest text-primary-glow">Company</div>
             <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
-              <li><a href="#about" className="hover:text-foreground">About</a></li>
-              <li><a href="#services" className="hover:text-foreground">Services</a></li>
-              <li><a href="#portfolio" className="hover:text-foreground">Portfolio</a></li>
-              <li><a href="#clients" className="hover:text-foreground">Clients</a></li>
-              <li><a href="#contact" className="hover:text-foreground">Contact</a></li>
+              <li><a href="/#about" className="hover:text-foreground">About</a></li>
+              <li><a href="/#services" className="hover:text-foreground">Services</a></li>
+              <li><a href="/#portfolio" className="hover:text-foreground">Portfolio</a></li>
+              <li><a href="/#clients" className="hover:text-foreground">Clients</a></li>
+              <li><a href="/#contact" className="hover:text-foreground">Contact</a></li>
             </ul>
           </div>
 
@@ -52,7 +52,7 @@ export function Footer() {
         </div>
 
         <div className="mt-10 flex flex-col items-center justify-between gap-3 border-t border-border pt-6 text-xs text-muted-foreground sm:flex-row">
-          <div>© {new Date().getFullYear()} HACommerceX Solutions. All rights reserved.</div>
+          <div suppressHydrationWarning>© {new Date().getFullYear()} HACommerceX Solutions. All rights reserved.</div>
           <div>BUILD • DESIGN • GROW</div>
         </div>
       </div>

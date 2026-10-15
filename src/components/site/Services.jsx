@@ -16,9 +16,10 @@ const services = [
   },
   {
     id: "pos",
-    title: "POS & Billing Systems",
+    href: "/services/pos-billing-systems",
+    title: "POS & Billing Software",
     icon: CreditCard,
-    text: "POS and billing solutions with inventory tracking, sales analytics, invoice generation, thermal receipt printing, customer management and multi-user support for retail and restaurant businesses. Available as a desktop or cloud-based system.",
+    text: "POS and billing software for retail shops: counter billing, thermal receipt printing, inventory tracking, sales reports, customer credit records and multiple cashier logins. Works offline and backs up to the cloud.",
   },
   {
     id: "websites",
@@ -74,12 +75,22 @@ export function Services() {
                   </div>
                   <h3 className="mt-5 text-lg font-semibold">{service.title}</h3>
                   <p className="mt-3 text-sm leading-6 text-muted-foreground">{service.text}</p>
-                  <a
-                    href="#contact"
-                    className="mt-5 inline-flex items-center text-sm font-semibold text-primary-glow hover:underline"
-                  >
-                    Get a free quote &rarr;
-                  </a>
+                  <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2">
+                    {service.href && (
+                      <a
+                        href={service.href}
+                        className="inline-flex items-center text-sm font-semibold text-primary-glow hover:underline"
+                      >
+                        Learn more &rarr;
+                      </a>
+                    )}
+                    <a
+                      href="#contact"
+                      className="inline-flex items-center text-sm font-semibold text-primary-glow hover:underline"
+                    >
+                      Get a free quote &rarr;
+                    </a>
+                  </div>
                 </div>
               </motion.article>
             );
