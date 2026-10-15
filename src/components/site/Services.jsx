@@ -4,6 +4,7 @@ import { ShoppingBag, LayoutDashboard, CreditCard, Globe, MessageSquare } from "
 const services = [
   {
     id: "ecommerce",
+    href: "/services/ecommerce-website-development",
     title: "E-Commerce Website Development",
     icon: ShoppingBag,
     text: "We build scalable MERN stack e-commerce stores with secure checkout, product management, responsive design, customer authentication and performance optimization to help your business grow online.",

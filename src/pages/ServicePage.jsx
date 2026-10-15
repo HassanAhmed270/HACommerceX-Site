@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
 import { Seo } from "../components/Seo.jsx";
 import billingImg from "@/assets/portfolio-2.webp";
+import storeImg from "@/assets/portfolio-1.webp";
+
+const IMAGES = { billing: billingImg, store: storeImg };
 import { services } from "../data/services.js";
 
 const SITE = "https://hacommercex.vercel.app";
@@ -38,6 +41,11 @@ export function ServicePage({ slug }) {
         <div key={sec.h2} className="mb-10">
           <h2 className="text-2xl font-semibold mb-4">{sec.h2}</h2>
           {sec.text ? <p className="text-muted-foreground">{sec.text}</p> : null}
+          {sec.link ? (
+            <p className="mt-3">
+              <Link to={sec.link.to} className="underline">{sec.link.label}</Link>
+            </p>
+          ) : null}
           {sec.items ? (
             <ul className="space-y-3">
               {sec.items.map(([t, d]) => (
@@ -50,8 +58,8 @@ export function ServicePage({ slug }) {
         </div>
       ))}
       <img
-        src={billingImg}
-        alt="Retail billing system invoice screen on a desktop monitor beside a thermal receipt printer"
+        src={IMAGES[s.image]}
+        alt={s.imageAlt}
         width="1200"
         height="900"
         loading="lazy"

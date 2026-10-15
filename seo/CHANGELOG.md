@@ -1,6 +1,11 @@
 # Changelog
 
-## 2026-10-15 - Phase 2 (build-time prerender + first service page) - ON A PREVIEW BRANCH, NOT YET ON MAIN
+## 2026-10-15 - Phase 2b: E-Commerce service page (built; awaiting deploy)
+New page `/services/ecommerce-website-development`; content approved with the owner section by section. Facts used: COD, Stripe card payments, catalogue, search/filters, checkout, accounts, WhatsApp, admin dashboard, order management, stock, coupons, email notifications, mobile-friendly (all owner-confirmed). Easypaisa/local wallets stated as "not built yet, can be built on request". No prices, timelines, barcodes or results. Files: `src/data/services.js`, `src/pages/ServicePage.jsx` (image map + link support), `Services.jsx` (card links to the page), `public/sitemap.xml`.
+Verified locally: raw HTML has title, canonical, one H1, 5 H2, Service + BreadcrumbList JSON-LD.
+Not verified: live behaviour, indexing.
+
+## 2026-10-15 - Phase 2 (build-time prerender + first service page) - DEPLOYED (main a0e2fa7; owner tested a Vercel preview: pages, refresh, 404, menu links, raw HTML all OK)
 Approved with the owner: option B (separate prerendered pages on the existing Vite + React site; homepage keeps its single-page scroll look).
 
 | Area | Change | Files |
