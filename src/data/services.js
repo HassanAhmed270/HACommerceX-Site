@@ -124,4 +124,49 @@ export const services = [
       },
     ],
   },
+  {
+    slug: "business-website-development",
+    path: "/services/business-website-development",
+    name: "Business Website Development",
+    title: "Business Website Development in Pakistan | HACommerceX",
+    description:
+      "Responsive, fast business websites built with React and Tailwind CSS: clear service pages, contact options and a clean modern design. Built in Karachi.",
+    h1: "Business Website Development for Businesses in Pakistan",
+    intro:
+      "HACommerceX builds responsive business websites that explain what you offer and make it easy for customers to contact you. It is built from Karachi for businesses in Pakistan and abroad.",
+    image: "website",
+    imageAlt: "Clean Nest cleaning services website homepage",
+    sections: [
+      {
+        h2: "What your website includes",
+        items: [
+          ["Responsive design", "Looks and works well on phones, tablets and computers."],
+          ["Clear service information", "Pages that explain what you offer and who you serve."],
+          ["Contact options", "Contact support so customers can reach you easily."],
+          ["Clean, modern design", "A look that fits your brand, with smooth animations."],
+          ["Fast-loading, SEO-friendly structure", "Built so pages load quickly and search engines can understand them."],
+        ],
+      },
+      {
+        h2: "Who it's for",
+        text:
+          "Service businesses and brands that need a professional website to show what they do and get enquiries, and businesses whose current website is outdated or hard to use on a phone.",
+      },
+      {
+        h2: "Real project: Clean Nest",
+        text:
+          "Clean Nest is a cleaning services business whose responsive React website we built, with service information, contact support and a clean, modern design. You can see it in our portfolio.",
+        link: { to: "/#portfolio", label: "View our portfolio" },
+      },
+      {
+        h2: "Need more than a website?",
+        text:
+          "If you also want to sell online, see our e-commerce store development. If you want to manage your business data, see our custom admin dashboards.",
+        links: [
+          { to: "/services/ecommerce-website-development", label: "E-commerce website development" },
+          { to: "/services/custom-admin-dashboards", label: "Custom admin dashboards" },
+        ],
+      },
+    ],
+  },
 ];

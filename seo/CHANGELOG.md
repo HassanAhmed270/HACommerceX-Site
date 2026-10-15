@@ -1,6 +1,9 @@
 # Changelog
 
-## 2026-10-15 - Phase 2c: Custom Admin Dashboards page (built; awaiting deploy)
+## 2026-10-15 - Phase 2d: Business Website Development page (built; awaiting deploy)
+New page `/services/business-website-development`. Facts from the portfolio/Services copy only: responsive React/Tailwind/Framer Motion sites, service information, contact support, clean modern design, SEO-friendly structure; Clean Nest named as a client project. Internal links to the E-Commerce and Dashboards pages. No prices, timelines or results claimed.
+
+## 2026-10-15 - Phase 2c: Custom Admin Dashboards page (built; owner tested the preview)
 New page `/services/custom-admin-dashboards`. Owner asked to use existing verified information. Claims limited to what the portfolio/demo and client projects show: sales analytics, orders overview, product management, secure login, role-based access. Deliberately NOT claimed: real-time monitoring, automation, exports, integrations (not confirmed). Demo dashboard referred to as a demo.
 
 ## 2026-10-15 - Phase 2b: E-Commerce service page (DEPLOYED; owner tested preview and merged)

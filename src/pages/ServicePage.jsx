@@ -3,11 +3,13 @@ import { Seo } from "../components/Seo.jsx";
 import billingImg from "@/assets/portfolio-2.webp";
 import storeImg from "@/assets/portfolio-1.webp";
 import dashboardImg from "@/assets/portfolio-3.webp";
+import websiteImg from "@/assets/portfolio-4.webp";
 
 const IMAGES = {
   billing: { src: billingImg, w: 1200, h: 900 },
   store: { src: storeImg, w: 1200, h: 900 },
   dashboard: { src: dashboardImg, w: 1200, h: 800 },
+  website: { src: websiteImg, w: 1200, h: 800 },
 };
 import { services } from "../data/services.js";
 
@@ -50,6 +52,15 @@ export function ServicePage({ slug }) {
             <p className="mt-3">
               <Link to={sec.link.to} className="underline">{sec.link.label}</Link>
             </p>
+          ) : null}
+          {sec.links ? (
+            <ul className="mt-3 space-y-2">
+              {sec.links.map((l) => (
+                <li key={l.to}>
+                  <Link to={l.to} className="underline">{l.label}</Link>
+                </li>
+              ))}
+            </ul>
           ) : null}
           {sec.items ? (
             <ul className="space-y-3">

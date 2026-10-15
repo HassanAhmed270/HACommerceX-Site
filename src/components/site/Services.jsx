@@ -25,6 +25,7 @@ const services = [
   },
   {
     id: "websites",
+    href: "/services/business-website-development",
     title: "Business Websites",
     icon: Globe,
     text: "Responsive, fast-loading websites with modern UI/UX, an SEO-friendly structure, smooth animations and a scalable architecture for businesses and brands.",
