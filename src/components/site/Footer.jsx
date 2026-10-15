@@ -53,7 +53,10 @@ export function Footer() {
 
         <div className="mt-10 flex flex-col items-center justify-between gap-3 border-t border-border pt-6 text-xs text-muted-foreground sm:flex-row">
           <div suppressHydrationWarning>© {new Date().getFullYear()} HACommerceX Solutions. All rights reserved.</div>
-          <div>BUILD • DESIGN • GROW</div>
+          <div className="flex items-center gap-4">
+            <a href="/privacy" className="hover:underline">Privacy Policy</a>
+            <span>BUILD • DESIGN • GROW</span>
+          </div>
         </div>
       </div>
     </footer>

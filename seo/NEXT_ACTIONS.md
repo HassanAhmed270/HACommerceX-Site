@@ -8,7 +8,7 @@ Priority Score = (Impact×0.30 + Confidence×0.25 + SEO×0.20 + Efficiency×0.15
 | 2 | `robots.txt`, `sitemap.xml`, canonical, OG/Twitter meta, share image | 92.0 | Deployed (owner confirmed) |
 | 3 | Render service content visibly + keyword-aligned H1/intro; replace inflated hero stats | 86.0 | Deployed (owner confirmed) |
 | 4 | Compress/resize images, favicon set | 83.0 | Deployed (owner confirmed) |
-| 5 | Multi-page service pages + build-time prerender | 81.0 | Prerender + POS page **live**; E-Commerce page live; Dashboards page built; Business Websites page built (awaiting deploy). Next: Chat-Based Agents, then privacy page, then Search Console data review |
+| 5 | Multi-page service pages + build-time prerender | 81.0 | Prerender + POS page **live**; E-Commerce page live; Dashboards page built; Business Websites live; Chat Agents page + Privacy page built (awaiting deploy). Next: Search Console/Bing data, directory listings, case studies |
 | 6 | Contact form fix | 80.0 | Done. Live and working (owner confirmed 2026-10-14) |
 | 7 | Fix/verify trust claims; single public email (`hacommercex@gmail.com`); dead partner link | 76.0 | Deployed (owner confirmed) |
 | 8 | Organization + WebSite JSON-LD (verified facts only) | 73.0 | Deployed; **validator results still to be reported by owner** |

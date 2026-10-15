@@ -1,6 +1,10 @@
 # Changelog
 
-## 2026-10-15 - Phase 2d: Business Website Development page (built; awaiting deploy)
+## 2026-10-15 - Phase 2e: Chat-Based Agents page + Privacy Policy (built; awaiting deploy)
+`/services/chat-based-agents` (short add-on page; text from the owner-approved Services card; no client project, no vendor/model claims, no results). `/privacy`: plain-language policy based on verified code facts (form fields name/email/project type/message, emailed to hacommercex@gmail.com via the server, Vercel hosting, Google Fonts, no own cookies/storage/analytics found in the code). Owner to confirm the retention/deletion sentence. Footer links to /privacy; both URLs added to the sitemap.
+Not legal advice; review if analytics or ads are added later.
+
+## 2026-10-15 - Phase 2d: Business Website Development page (DEPLOYED; main 053b18c)
 New page `/services/business-website-development`. Facts from the portfolio/Services copy only: responsive React/Tailwind/Framer Motion sites, service information, contact support, clean modern design, SEO-friendly structure; Clean Nest named as a client project. Internal links to the E-Commerce and Dashboards pages. No prices, timelines or results claimed.
 
 ## 2026-10-15 - Phase 2c: Custom Admin Dashboards page (built; owner tested the preview)

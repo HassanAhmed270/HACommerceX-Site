@@ -73,6 +73,7 @@ export function ServicePage({ slug }) {
           ) : null}
         </div>
       ))}
+      {s.image ? (
       <img
         src={IMAGES[s.image].src}
         alt={s.imageAlt}
@@ -81,6 +82,7 @@ export function ServicePage({ slug }) {
         loading="lazy"
         className="mb-10 w-full rounded-xl border border-white/10"
       />
+      ) : null}
       <h2 className="text-2xl font-semibold mb-4">How to get started</h2>
       <p className="text-muted-foreground mb-6">
         Tell us what you need, get a free quote, and we build it. See{" "}

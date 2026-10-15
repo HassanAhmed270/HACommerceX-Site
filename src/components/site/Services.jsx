@@ -32,6 +32,7 @@ const services = [
   },
   {
     id: "chat-agents",
+    href: "/services/chat-based-agents",
     title: "Chat-Based Agents",
     icon: MessageSquare,
     text: "Chat-based agents for online stores and business websites that answer product questions, explain your policies and, where your setup allows, update or record orders. Available as an add-on to your store or website.",

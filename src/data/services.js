@@ -169,4 +169,40 @@ export const services = [
       },
     ],
   },
+  {
+    slug: "chat-based-agents",
+    path: "/services/chat-based-agents",
+    name: "Chat-Based Agents",
+    title: "Chat-Based Agents for Online Stores and Websites | HACommerceX",
+    description:
+      "Chat-based agents that answer product questions, explain your policies and, where your setup allows, update or record orders. An add-on for your store or website.",
+    h1: "Chat-Based Agents for Online Stores and Business Websites",
+    intro:
+      "HACommerceX builds chat-based agents for online stores and business websites. They talk to your customers, answer their questions and take some of the repeat work off your team. It is an add-on to a store or website, built from Karachi for businesses in Pakistan and abroad.",
+    image: null,
+    sections: [
+      {
+        h2: "What a chat-based agent can do",
+        items: [
+          ["Answer product questions", "Customers ask about your products and get answers in the chat."],
+          ["Explain your policies", "Delivery, returns and payment questions answered from the policies you give us."],
+          ["Update or record orders", "Where your setup allows it, the agent can update an order or record it."],
+        ],
+      },
+      {
+        h2: "Who it's for",
+        text:
+          "Online stores and business websites that get the same questions again and again, and want customers to get an answer without waiting for someone to reply. Order handling is available where your setup allows it. It is not the main part of a project, so tell us what you need in the quote form.",
+      },
+      {
+        h2: "An add-on to your store or website",
+        text:
+          "We add chat-based agents to a store or website we build for you, or to one you already have where it makes sense. See the services it works with.",
+        links: [
+          { to: "/services/ecommerce-website-development", label: "E-commerce website development" },
+          { to: "/services/business-website-development", label: "Business website development" },
+        ],
+      },
+    ],
+  },
 ];
