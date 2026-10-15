@@ -1,6 +1,9 @@
 # Changelog
 
-## 2026-10-15 - Phase 2b: E-Commerce service page (built; awaiting deploy)
+## 2026-10-15 - Phase 2c: Custom Admin Dashboards page (built; awaiting deploy)
+New page `/services/custom-admin-dashboards`. Owner asked to use existing verified information. Claims limited to what the portfolio/demo and client projects show: sales analytics, orders overview, product management, secure login, role-based access. Deliberately NOT claimed: real-time monitoring, automation, exports, integrations (not confirmed). Demo dashboard referred to as a demo.
+
+## 2026-10-15 - Phase 2b: E-Commerce service page (DEPLOYED; owner tested preview and merged)
 New page `/services/ecommerce-website-development`; content approved with the owner section by section. Facts used: COD, Stripe card payments, catalogue, search/filters, checkout, accounts, WhatsApp, admin dashboard, order management, stock, coupons, email notifications, mobile-friendly (all owner-confirmed). Easypaisa/local wallets stated as "not built yet, can be built on request". No prices, timelines, barcodes or results. Files: `src/data/services.js`, `src/pages/ServicePage.jsx` (image map + link support), `Services.jsx` (card links to the page), `public/sitemap.xml`.
 Verified locally: raw HTML has title, canonical, one H1, 5 H2, Service + BreadcrumbList JSON-LD.
 Not verified: live behaviour, indexing.

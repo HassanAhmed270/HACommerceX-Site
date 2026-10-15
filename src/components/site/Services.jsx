@@ -11,6 +11,7 @@ const services = [
   },
   {
     id: "dashboards",
+    href: "/services/custom-admin-dashboards",
     title: "Custom Admin Dashboards",
     icon: LayoutDashboard,
     text: "Custom dashboards with analytics, role management, reporting, automation, secure authentication and real-time business monitoring, designed for growing companies and startups.",

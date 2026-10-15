@@ -2,8 +2,13 @@ import { Link } from "react-router-dom";
 import { Seo } from "../components/Seo.jsx";
 import billingImg from "@/assets/portfolio-2.webp";
 import storeImg from "@/assets/portfolio-1.webp";
+import dashboardImg from "@/assets/portfolio-3.webp";
 
-const IMAGES = { billing: billingImg, store: storeImg };
+const IMAGES = {
+  billing: { src: billingImg, w: 1200, h: 900 },
+  store: { src: storeImg, w: 1200, h: 900 },
+  dashboard: { src: dashboardImg, w: 1200, h: 800 },
+};
 import { services } from "../data/services.js";
 
 const SITE = "https://hacommercex.vercel.app";
@@ -58,10 +63,10 @@ export function ServicePage({ slug }) {
         </div>
       ))}
       <img
-        src={IMAGES[s.image]}
+        src={IMAGES[s.image].src}
         alt={s.imageAlt}
-        width="1200"
-        height="900"
+        width={IMAGES[s.image].w}
+        height={IMAGES[s.image].h}
         loading="lazy"
         className="mb-10 w-full rounded-xl border border-white/10"
       />

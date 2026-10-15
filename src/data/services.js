@@ -88,4 +88,40 @@ export const services = [
       },
     ],
   },
+  {
+    slug: "custom-admin-dashboards",
+    path: "/services/custom-admin-dashboards",
+    name: "Custom Admin Dashboards",
+    title: "Custom Admin Dashboard Development in Pakistan | HACommerceX",
+    description:
+      "Custom admin dashboards with sales analytics, orders and product management, secure login and role-based access. Built in Karachi with the MERN stack.",
+    h1: "Custom Admin Dashboard Development for Businesses in Pakistan",
+    intro:
+      "HACommerceX builds custom admin dashboards on the MERN stack. A dashboard gives you one secure place to see how your business is doing and to manage your orders, products and team. It is built from Karachi for businesses in Pakistan and abroad.",
+    image: "dashboard",
+    imageAlt: "Demo admin dashboard with sales charts, an orders overview and a recent orders table",
+    sections: [
+      {
+        h2: "What a dashboard can include",
+        items: [
+          ["Sales analytics", "Charts and summaries that show how your sales are going."],
+          ["Orders overview", "See your latest orders in one place and keep track of them."],
+          ["Product management", "Add and update your products and keep an eye on stock."],
+          ["Secure login", "Only people you approve can sign in."],
+          ["Role-based access", "Give each team member access only to what they need."],
+        ],
+      },
+      {
+        h2: "Who it's for",
+        text:
+          "Business owners who manage orders, stock or sales in spreadsheets, chats or paper, and teams that need one place to see their numbers. We build the dashboard around how your business works, so tell us what you need to see in the quote form.",
+      },
+      {
+        h2: "Part of your store or system, or on its own",
+        text:
+          "We build dashboards as part of an online store or billing system, as with our AKA_WMart store and retail billing software, and as standalone tools for a business that needs one. You can see our demo dashboard in the portfolio.",
+        link: { to: "/#portfolio", label: "View our portfolio" },
+      },
+    ],
+  },
 ];
