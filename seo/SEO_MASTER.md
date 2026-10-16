@@ -6,7 +6,7 @@ Last updated: 2026-10-14 · Repo snapshot: `c84e224` ("Claude Optimised Vite Ver
 
 | Item | Fact | Evidence |
 |---|---|---|
-| Stack | Vite 5 + React 18 SPA, Tailwind 4, framer-motion; Express `server/index.js` for local dev; Vercel serverless `api/index.js` for `/api/sendEmail` | package.json, vite.config.js, api/index.js |
+| Stack | Vite 5 + React 18 SPA, Tailwind 4, framer-motion; Express `server/index.js` for local dev; Vercel serverless `api/sendEmail.js` for `/api/sendEmail` | package.json, vite.config.js, api/index.js |
 | Rendering | Pure client-side rendering. Built `dist/index.html` has an empty `<div id="root">` and one module script | local `vite build` output |
 | URLs | One indexable URL (`/`). Navigation uses `#about`, `#services` etc. anchors | Navbar.jsx, App.jsx |
 | Vercel routing | `vercel.json` rewrites `/(.*)` to `/index.html` (after `/api/*`) | vercel.json |

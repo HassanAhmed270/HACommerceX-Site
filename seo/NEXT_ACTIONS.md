@@ -15,7 +15,9 @@ Priority Score = (Impact×0.30 + Confidence×0.25 + SEO×0.20 + Efficiency×0.15
 | 9 | Duplicate IDs, accessible service cards and dialog | 67.0 | Deployed (owner confirmed) |
 | 10 | Legitimate directory listings + brand profiles | 65.0 | After proof assets exist |
 
-## Phase 3 (built 2026-10-16, awaiting deploy)
+## HOTFIX 2026-10-16: form 404 (api route) - fix built, awaiting owner preview test then merge. Until merged the live contact form does NOT work (customers can use email / WhatsApp on the page)
+
+## Phase 3 (LIVE on main bed7689: form protection + fonts). Still to do: send a real test message after the hotfix, run PageSpeed mobile x3 and record the median
 Contact form protection + non-blocking fonts. After deploy: send ONE real test message from the live site and confirm it arrives; run PageSpeed Insights on the home page and record the result.
 
 ## To check (owner reminders, 2026-10-15)

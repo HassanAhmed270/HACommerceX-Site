@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-10-16 - HOTFIX: contact form returned 404 on production (cause: Phase 2 `vercel.json`)
+Symptom: owner saw "We couldn't send your message right now"; browser Network tab showed `POST /api/sendEmail` = 404 (0.2 kB, Vercel platform 404, not our 404 page); no function logs because the function never ran.
+Cause (mine, introduced in Phase 2, commit a0e2fa7): `cleanUrls: true` makes Vercel serve functions without extension (`/api/index`), but the rewrite destination was still `/api/index.js`, which no longer exists, so every `/api/*` request hit Vercel's `/api` 404 rule. Vercel docs: with `cleanUrls`, do not include the file extension in rewrite source or destination. I did not test the form on the Phase 2 preview; that was a gap in my checks.
+Reproduced locally with Vercel's own build tool (`vercel build`): old config routes `/api/*` to `/api/index.js` (missing) then to the `^/api` 404 rule; new config has function `/api/sendEmail` and no rewrite.
+Fix: renamed `api/index.js` to `api/sendEmail.js` (Vercel serves it natively at `/api/sendEmail`, same URL the form already calls) and removed the `/api` rewrite from `vercel.json`. No code logic change.
+Verified: `vercel build` output lists function `api/sendEmail` and no custom `/api` rewrite; handler tests from Phase 3 still apply (same file content).
+Not verified until deployed: a real POST on Vercel. Test on the preview: Network tab must NOT show 404 (500 or 200 both prove routing; 500 on a preview only means Preview env vars are missing).
+Process change: every delivery that touches `vercel.json`, `api/` or the form now requires sending a real test message from the preview (added to the checklist).
+Rollback: revert this commit (form stays broken as before).
+
 ## 2026-10-16 - Phase 3: contact form protection + non-blocking fonts (built; awaiting deploy)
 | Area | Change | Files |
 |---|---|---|

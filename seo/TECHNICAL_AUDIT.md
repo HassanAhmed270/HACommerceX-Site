@@ -108,3 +108,6 @@ Verified from code: J1–J3, T1–T2, T5, P1–P5, O1–O9, C1–C6. Verified by
 | Structured data | Owner ran the tools 2026-10-15: Rich Results Test shows Breadcrumbs, no errors (POS page); Schema validator shows Organization, no errors (home page) |
 | Still open | T6 (preview URLs may be indexable; consider noindex for previews), T7 (security/cache headers), J4 (hero animation vs LCP; unmeasured), indexing and Core Web Vitals field data |
 
+## Incident 2026-10-16: /api/sendEmail 404 after Phase 2
+`cleanUrls: true` + rewrite destination `/api/index.js` = function not found (see CHANGELOG hotfix entry). Fixed by renaming the function to `api/sendEmail.js` and removing the rewrite. Lesson: any change to `vercel.json`, `api/` or the form must be tested with a real submission on a preview before merge.
+
