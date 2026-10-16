@@ -11,7 +11,7 @@ const IMAGES = {
   dashboard: { src: dashboardImg, w: 1200, h: 800 },
   website: { src: websiteImg, w: 1200, h: 800 },
 };
-import { services } from "../data/services.js";
+import { services, relatedServices } from "../data/services.js";
 
 const SITE = "https://hacommercex.vercel.app";
 
@@ -73,6 +73,19 @@ export function ServicePage({ slug }) {
           ) : null}
         </div>
       ))}
+      <div className="mb-10">
+        <h2 className="text-2xl font-semibold mb-4">Related services</h2>
+        <ul className="space-y-2">
+          {(relatedServices[s.slug] || []).map((slug) => {
+            const r = services.find((x) => x.slug === slug);
+            return r ? (
+              <li key={slug}>
+                <Link to={r.path} className="underline">{r.name}</Link>
+              </li>
+            ) : null;
+          })}
+        </ul>
+      </div>
       {s.image ? (
       <img
         src={IMAGES[s.image].src}

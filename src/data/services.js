@@ -212,3 +212,12 @@ export const services = [
     ],
   },
 ];
+
+// Related services shown at the bottom of each service page (internal linking).
+export const relatedServices = {
+  "pos-billing-systems": ["custom-admin-dashboards", "ecommerce-website-development"],
+  "ecommerce-website-development": ["custom-admin-dashboards", "business-website-development", "pos-billing-systems"],
+  "custom-admin-dashboards": ["ecommerce-website-development", "pos-billing-systems"],
+  "business-website-development": ["ecommerce-website-development", "custom-admin-dashboards"],
+  "chat-based-agents": ["ecommerce-website-development", "business-website-development"],
+};
