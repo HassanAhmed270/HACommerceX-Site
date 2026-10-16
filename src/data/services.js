@@ -84,7 +84,10 @@ export const services = [
         h2: "Real project: AKA_WMart",
         text:
           "AKA_WMart is an online watch store we built for a client, with checkout, WhatsApp integration, user accounts and an admin dashboard. You can see it in our portfolio.",
-        link: { to: "/#portfolio", label: "View our portfolio" },
+        links: [
+          { to: "/case-studies/aka-wmart-online-watch-store", label: "Read the AKA_WMart case study" },
+          { to: "/#portfolio", label: "View our portfolio" },
+        ],
       },
     ],
   },
@@ -120,7 +123,10 @@ export const services = [
         h2: "Part of your store or system, or on its own",
         text:
           "We build dashboards as part of an online store or billing system, as with our AKA_WMart store and retail billing software, and as standalone tools for a business that needs one. You can see our demo dashboard in the portfolio.",
-        link: { to: "/#portfolio", label: "View our portfolio" },
+        links: [
+          { to: "/case-studies/aka-wmart-online-watch-store", label: "Read the AKA_WMart case study" },
+          { to: "/#portfolio", label: "View our portfolio" },
+        ],
       },
     ],
   },
