@@ -2,6 +2,7 @@ import { Outlet } from "react-router-dom";
 import { Toaster } from "sonner";
 import { Navbar } from "./components/site/Navbar.jsx";
 import { AnimatedBackground } from "./components/site/AnimatedBackground.jsx";
+import { WhatsAppButton } from "./components/site/WhatsAppButton.jsx";
 import { Footer } from "./components/site/Footer.jsx";
 
 export function Layout() {
@@ -17,6 +18,7 @@ export function Layout() {
         <Outlet />
       </main>
       <Footer />
+      <WhatsAppButton />
     </div>
   );
 }
