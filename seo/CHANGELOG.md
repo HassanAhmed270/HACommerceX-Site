@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-10-16 - Phase 4 (Week 3): accessibility fixes (built; awaiting deploy)
+Trigger: owner's PageSpeed run, accessibility 96, failing element "Get a Free Quote" (white text on `#2e89ff` = 3.42:1; AA needs 4.5:1 for this text size).
+| Area | Change | Files |
+|---|---|---|
+| Contrast | New token `--primary-solid: #0068f8` (white text 4.84:1, owner chose option B of 4 swatches) used for solid buttons: navbar CTA (desktop + mobile menu), hero CTA, contact submit, service page CTA, "How we work" step numbers. `--primary` unchanged for glows and accents (text accents on the dark background would get worse if darkened) | `styles.css`, `Navbar.jsx`, `Hero.jsx`, `Contact.jsx`, `HowWeWork.jsx`, `ServicePage.jsx` |
+| Alt text | Navbar and footer logos `alt=""` (the brand name is printed right beside them; redundant alt flagged by PSI) | `Navbar.jsx`, `Footer.jsx` |
+| Link purpose | "Learn more" links get `aria-label="Learn more about <service>"` (five links went to different pages with identical text) | `Services.jsx` |
+Verified: local Lighthouse (same build, before vs after): accessibility 96 to 100; the only failing audit before was color-contrast on the hero CTA, none after. Logo alts empty, 5 distinct Learn-more labels, no horizontal scroll, look unchanged apart from the deeper blue.
+Not verified: PageSpeed Insights on the live URL after deploy (owner to re-run); other pages were not Lighthouse-tested.
+Rollback: do not merge, or `git revert -m 1 <merge commit>`.
+
 ## 2026-10-16 - HOTFIX: contact form returned 404 on production (cause: Phase 2 `vercel.json`)
 Symptom: owner saw "We couldn't send your message right now"; browser Network tab showed `POST /api/sendEmail` = 404 (0.2 kB, Vercel platform 404, not our 404 page); no function logs because the function never ran.
 Cause (mine, introduced in Phase 2, commit a0e2fa7): `cleanUrls: true` makes Vercel serve functions without extension (`/api/index`), but the rewrite destination was still `/api/index.js`, which no longer exists, so every `/api/*` request hit Vercel's `/api` 404 rule. Vercel docs: with `cleanUrls`, do not include the file extension in rewrite source or destination. I did not test the form on the Phase 2 preview; that was a gap in my checks.

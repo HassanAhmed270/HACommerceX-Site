@@ -55,7 +55,7 @@ export function Hero() {
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4 pl-16 lg:justify-start">
             <a
               href="#contact"
-              className="inline-flex items-center rounded-xl bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-[0_0_30px_oklch(0.62_0.24_260/0.4)] transition-all hover:scale-[1.03] hover:shadow-[0_0_50px_oklch(0.62_0.24_260/0.6)]"
+              className="inline-flex items-center rounded-xl bg-primary-solid px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-[0_0_30px_oklch(0.62_0.24_260/0.4)] transition-all hover:scale-[1.03] hover:shadow-[0_0_50px_oklch(0.62_0.24_260/0.6)]"
             >
               Get a Free Quote
             </a>

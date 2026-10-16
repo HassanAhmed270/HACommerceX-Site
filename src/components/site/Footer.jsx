@@ -7,7 +7,7 @@ export function Footer() {
         <div className="grid gap-10 md:grid-cols-4">
           <div className="md:col-span-2">
             <div className="flex items-center gap-2">
-              <img src={logo} alt="HACommerceX" width={36} height={36} className="h-9 w-9 rounded-lg" />
+              <img src={logo} alt="" width={36} height={36} className="h-9 w-9 rounded-lg" />
               <span className="font-display text-lg font-bold">
                 HA<span className="text-primary-glow">CommerceX</span>
               </span>

@@ -88,7 +88,7 @@ export function ServicePage({ slug }) {
         Tell us what you need, get a free quote, and we build it. See{" "}
         <Link to="/#how-we-work" className="underline">how we work</Link>.
       </p>
-      <Link to="/#contact" className="inline-block rounded-md bg-primary px-5 py-3 text-primary-foreground">
+      <Link to="/#contact" className="inline-block rounded-md bg-primary-solid px-5 py-3 text-primary-foreground">
         Get a free quote
       </Link>
     </section>

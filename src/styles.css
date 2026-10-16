@@ -18,6 +18,7 @@
   --color-popover-foreground: var(--popover-foreground);
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
+  --color-primary-solid: var(--primary-solid);
   --color-primary-glow: var(--primary-glow);
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
@@ -44,6 +45,8 @@
   --popover-foreground: oklch(0.98 0.01 240);
   --primary: oklch(0.66 0.23 260);
   --primary-foreground: oklch(0.99 0 0);
+  /* Solid button fill: 4.84:1 contrast with white text (WCAG AA). --primary stays for glows and accents. */
+  --primary-solid: #0068f8;
   --primary-glow: oklch(0.78 0.20 250);
   --secondary: oklch(0.30 0.05 265);
   --secondary-foreground: oklch(0.98 0.01 240);

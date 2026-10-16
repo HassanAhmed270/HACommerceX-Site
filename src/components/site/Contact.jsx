@@ -140,7 +140,7 @@ export function Contact() {
             <button
               type="submit"
               disabled={sending}
-              className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground transition-all hover:scale-[1.01] glow-primary disabled:cursor-not-allowed disabled:opacity-60"
+              className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-primary-solid px-6 py-3.5 text-sm font-semibold text-primary-foreground transition-all hover:scale-[1.01] glow-primary disabled:cursor-not-allowed disabled:opacity-60"
             >
               {sending ? "Sending..." : (<><Send size={16} aria-hidden="true" /> Send Message</>)}
             </button>

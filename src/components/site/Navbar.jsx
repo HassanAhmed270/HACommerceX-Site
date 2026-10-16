@@ -43,7 +43,7 @@ export function Navbar() {
           className={`flex items-center justify-between rounded-2xl px-4 py-3 transition-all duration-300 ${scrolled ? "glass-strong" : "glass"}`}
         >
           <a href="/#home" onClick={(e) => scrollToSection(e, "/#home")} className="flex items-center gap-2">
-            <img src={logo} alt="HACommerceX" className="h-9 w-9 rounded-lg object-cover" />
+            <img src={logo} alt="" className="h-9 w-9 rounded-lg object-cover" />
             <span className="font-display text-lg font-bold">
               HA<span className="text-primary-glow">CommerceX</span>
             </span>
@@ -66,7 +66,7 @@ export function Navbar() {
           <a
             href="/#contact"
             onClick={(e) => scrollToSection(e, "/#contact")}
-            className="hidden rounded-xl bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-[0_0_30px_oklch(0.62_0.24_260/0.4)] transition-all hover:scale-[1.03] hover:shadow-[0_0_50px_oklch(0.62_0.24_260/0.6)] lg:inline-flex"
+            className="hidden rounded-xl bg-primary-solid px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-[0_0_30px_oklch(0.62_0.24_260/0.4)] transition-all hover:scale-[1.03] hover:shadow-[0_0_50px_oklch(0.62_0.24_260/0.6)] lg:inline-flex"
           >
             Get a Free Quote
           </a>
@@ -100,7 +100,7 @@ export function Navbar() {
                 <a
                   href="/#contact"
                   onClick={(e) => scrollToSection(e, "/#contact")}
-                  className="block rounded-lg bg-primary px-3 py-2 text-center text-sm font-semibold text-primary-foreground"
+                  className="block rounded-lg bg-primary-solid px-3 py-2 text-center text-sm font-semibold text-primary-foreground"
                 >
                   Get a Free Quote
                 </a>

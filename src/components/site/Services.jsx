@@ -83,6 +83,7 @@ export function Services() {
                     {service.href && (
                       <a
                         href={service.href}
+                        aria-label={`Learn more about ${service.title}`}
                         className="inline-flex items-center text-sm font-semibold text-primary-glow hover:underline"
                       >
                         Learn more &rarr;

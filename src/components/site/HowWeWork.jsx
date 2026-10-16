@@ -47,7 +47,7 @@ export function HowWeWork() {
                   transition={{ duration: 0.4, delay: i * 0.08 }}
                   className="rounded-2xl border border-border bg-secondary/40 p-6"
                 >
-                  <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-primary text-sm font-bold text-primary-foreground">
+                  <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-primary-solid text-sm font-bold text-primary-foreground">
                     {i + 1}
                   </span>
                   <h3 className="mt-4 font-semibold">{s.title}</h3>
