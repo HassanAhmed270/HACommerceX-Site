@@ -1,5 +1,18 @@
 # Changelog
 
+## 2026-10-16 - Phase 3: contact form protection + non-blocking fonts (built; awaiting deploy)
+| Area | Change | Files |
+|---|---|---|
+| Form API | CORS no longer `*`: only production, `hacommercex*.vercel.app` previews and localhost; other origins get 403 | `api/index.js` |
+| Form API | Honeypot field (`contact_website`): filled = silent success, nothing sent; max lengths (name 100, email 254, subject 100, message 5000); email format check; non-string fields rejected; line breaks stripped from subject | `api/index.js` |
+| Form UI | Hidden honeypot input (off-screen, `tabIndex=-1`, `aria-hidden`); `maxLength` on inputs; payload includes the honeypot | `Contact.jsx` |
+| Fonts | Google Fonts stylesheet loaded with `preload` + `onload` (non-blocking), `noscript` fallback | `index.html` |
+| Records | Privacy wording confirmed by owner; audit update; listings tracker (`LINK_OPPORTUNITIES.md`); next actions | `seo/*` |
+
+Verified: 12 server-side cases (allowed origins, evil and lookalike origins, honeypot, bad email, empty and too-long fields, non-string field, GET/OPTIONS); a valid message delivered through a fake SMTP server with header-injection stripped and HTML escaped; browser test (hidden honeypot off-screen, no horizontal scroll, payload shape, form clears on success, maxlength attributes); build prerenders 8 pages; fonts link is `preload` in the built HTML.
+Not verified: real email delivery on production (needs one test message after deploy); LCP effect of the font change (not measured). Privacy page unchanged: it still correctly says fonts load from Google Fonts and the site sets no cookies.
+Rollback: do not merge, or `git revert -m 1 <merge commit>`.
+
 ## 2026-10-15 - Phase 2e: Chat-Based Agents page + Privacy Policy (built; awaiting deploy)
 `/services/chat-based-agents` (short add-on page; text from the owner-approved Services card; no client project, no vendor/model claims, no results). `/privacy`: plain-language policy based on verified code facts (form fields name/email/project type/message, emailed to hacommercex@gmail.com via the server, Vercel hosting, Google Fonts, no own cookies/storage/analytics found in the code). Owner to confirm the retention/deletion sentence. Footer links to /privacy; both URLs added to the sitemap.
 Not legal advice; review if analytics or ads are added later.

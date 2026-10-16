@@ -96,3 +96,15 @@ Good: portfolio images already use `loading="lazy"` with width/height; hero SVG 
 ## Validation status
 
 Verified from code: J1–J3, T1–T2, T5, P1–P5, O1–O9, C1–C6. Verified by live fetch: T3 (partial). Not verified: HTTP status codes, response headers, rendered output in Google, CWV, console errors, indexing.
+
+## Update 2026-10-16 (after Phase 2 + Phase 3 built)
+| Item | Status |
+|---|---|
+| J1 (empty initial HTML), J3 (single URL), T4 (soft 404) | Fixed in Phase 2: build-time prerender, 7 real URLs, prerendered 404 page. Owner tested on a Vercel preview: pages, refresh, 404, menu links, raw HTML OK. Live behaviour of the 404 status code and headers still to be confirmed with Search Console / curl on production |
+| O8 (privacy page) | Fixed: `/privacy` live; wording confirmed by the owner 2026-10-16 |
+| C6 (CORS wildcard, no spam protection) | Fixed in Phase 3 (built; awaiting deploy): origin allow-list (production, this project's Vercel previews, localhost), 403 for other sites, honeypot field, length limits, email format check, header-injection strip. Limit: scripts with no Origin header can still post valid messages; no rate limit (serverless, no shared store). Add rate limiting or a CAPTCHA only if spam appears |
+| P5 (render-blocking Google Fonts) | Changed in Phase 3 (built; awaiting deploy): non-blocking `preload` + `onload` swap with `noscript` fallback; `display=swap` kept. Effect on LCP **not measured**: run PageSpeed Insights before/after on the live URL |
+| Search Console | Verified 2026-10-15 (HTML file `public/googleab313ebbe643e1c8.html`, keep it); sitemap submitted (Success); URL-inspection indexing requests blocked by daily quota, retry 2026-10-17. Bing imported from Search Console; dashboard data pending (up to 48 h) |
+| Structured data | Owner ran the tools 2026-10-15: Rich Results Test shows Breadcrumbs, no errors (POS page); Schema validator shows Organization, no errors (home page) |
+| Still open | T6 (preview URLs may be indexable; consider noindex for previews), T7 (security/cache headers), J4 (hero animation vs LCP; unmeasured), indexing and Core Web Vitals field data |
+

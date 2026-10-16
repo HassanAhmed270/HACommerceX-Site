@@ -30,6 +30,8 @@ export function Contact() {
       email: String(formData.get("email") ?? "").trim(),
       subject: String(formData.get("subject") ?? "").trim(),
       message: String(formData.get("message") ?? "").trim(),
+      // Honeypot: hidden from visitors; the server ignores messages where this is filled.
+      contact_website: String(formData.get("contact_website") ?? ""),
     };
 
     try {
@@ -89,9 +91,13 @@ export function Contact() {
             viewport={{ once: true }}
             className="glass-strong rounded-3xl p-8 lg:col-span-3"
           >
+            <div aria-hidden="true" style={{ position: "absolute", left: "-9999px", width: 1, height: 1, overflow: "hidden" }}>
+              <label htmlFor="contact-website">Leave this field empty</label>
+              <input id="contact-website" name="contact_website" type="text" tabIndex={-1} autoComplete="off" />
+            </div>
             <div className="grid gap-4 sm:grid-cols-2">
-              <Field id="contact-name" label="Name" name="name" placeholder="Your name" autoComplete="name" />
-              <Field id="contact-email" label="Email" name="email" type="email" placeholder="you@company.com" autoComplete="email" />
+              <Field id="contact-name" label="Name" name="name" placeholder="Your name" autoComplete="name" maxLength={100} />
+              <Field id="contact-email" label="Email" name="email" type="email" placeholder="you@company.com" autoComplete="email" maxLength={254} />
             </div>
 
             <div className="mt-4">
@@ -124,6 +130,7 @@ export function Contact() {
                 id="contact-message"
                 required
                 name="message"
+                maxLength={5000}
                 rows={5}
                 placeholder="Tell us a bit about your project…"
                 className={inputClass}
@@ -167,7 +174,7 @@ export function Contact() {
   );
 }
 
-function Field({ id, label, name, type = "text", placeholder, autoComplete, className = "" }) {
+function Field({ id, label, name, type = "text", placeholder, autoComplete, maxLength, className = "" }) {
   return (
     <div className={className}>
       <label htmlFor={id} className="text-xs font-medium text-muted-foreground">{label}</label>
@@ -178,6 +185,7 @@ function Field({ id, label, name, type = "text", placeholder, autoComplete, clas
         type={type}
         placeholder={placeholder}
         autoComplete={autoComplete}
+        maxLength={maxLength}
         className={inputClass}
       />
     </div>
